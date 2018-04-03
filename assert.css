@@ -1,7 +1,7 @@
 .assert {
     width: 600px;
     margin: 20px;
-    background: #eee;
+    background-image: linear-gradient(to bottom, #e2ebef, #eee);
     padding: 8px;
     font-family: Helvetica, sans-serif;
     font-size: 20px;
