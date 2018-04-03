@@ -1,0 +1,33 @@
+.assert {
+    width: 600px;
+    margin: 20px;
+    background: #eee;
+    padding: 8px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 7px;
+}
+
+.assert h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.pass {
+    color: forestgreen;
+    text-decoration: none;
+}
+
+.pass::before {
+    content: "Assertion passed: "
+}
+
+.fail {
+    color: red;
+    text-decoration: line-through;
+}
+
+.fail::before {
+    content: "Assertion failed: ";
+}
