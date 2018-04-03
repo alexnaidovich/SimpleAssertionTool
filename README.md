@@ -21,7 +21,7 @@ A simple and lightweight tool to perform simple unit-testing.
   
      ```let testAssert = new Assert('my-test', 'Test Assertion');```
      
-  * Now you're completely ready to perform tests! Use `.assert()` method to the variable you've stored above, and pass `statement` (the function that returns anything or simply an expression) as the first argument, and string `"message"` with your expectations as second one:
+  * Now you're completely ready to perform tests! Use `.assert()` method to the variable you've stored above. At the first `statement` argument you are to compare the returned value of function (or expression) you are testing with the value expected. And as the second `message` argument you pass a `{String}` with ongoing message:
   
      ```javascript
      testAssert.assert((yourFunc(yourArgs) === expected value), 'Returns true value!');
