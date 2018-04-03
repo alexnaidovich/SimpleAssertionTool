@@ -17,7 +17,7 @@ A simple and lightweight tool to perform simple unit-testing and visualize it in
   
      ```<div class="assert" id="my-test"></div>```
      
-  * Then you are to link your test with `div` created above. In your script store a variable that contains `new Assert()` and the `id` of `div` created above as first argument, and the name (heading) of your test as second one:
+  * Then you are to link your test with `div` created above. In your script store a variable that contains `new Assert()` and pass the `id` of `div` created above as first argument, and the name (heading) of your test as second one:
   
      ```let testAssert = new Assert('my-test', 'Test Assertion');```
      
