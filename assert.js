@@ -3,7 +3,7 @@ class Assert {
     constructor(id, name) {
         this.el = document.getElementById(id);
         this.h2 = this.el.appendChild(document.createElement('h2'));
-        this.h2.innerText = name;
+        this.h2.innerText = name === undefined ? "Unnamed Test" : name;
         this.ul = this.el.appendChild(document.createElement('ul'));
     }
     
