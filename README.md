@@ -35,14 +35,25 @@ A simple and lightweight tool to perform simple unit-testing.
 There is the way I've tested the workability of this all:
 
    ```javascript
-   <div class="assert" id="sum"></div>
-   <script>    
-       const sum = (a, b) => a + b;
-       let sumAssert = new Assert('sum', 'Test Sum Function');
-       sumAssert.assert((sum(2, 2) === 4), 'Returns 4 - true value!');
-       sumAssert.assert((sum(2, 2) === 5), "Doesn't return false value!");
-       sumAssert.assert((2 + 2 === 4), "Simple Expression Test");
-   </script>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <title>Document</title>
+     <link rel="stylesheet" href="assert.css">
+     <script src="assert.js"></script>
+   </head>
+   <body>
+     <div class="assert" id="sum"></div>
+     <script>    
+         const sum = (a, b) => a + b;
+         let sumAssert = new Assert('sum', 'Test Sum Function');
+         sumAssert.assert((sum(2, 2) === 4), 'Returns 4 - true value!');
+         sumAssert.assert((sum(2, 2) === 5), "Doesn't return false value!");
+         sumAssert.assert((2 + 2 !== 4), "Simple Expression Test");
+     </script>
+   </body>
+   </html>
    ```
    
 ### Some Screenshots: 
