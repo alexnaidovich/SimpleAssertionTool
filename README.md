@@ -1,5 +1,5 @@
 # SimpleAssertionTool
-A simple and lightweight tool to perform simple unit-testing and show it into your browser.
+A simple and lightweight tool to perform simple unit-testing and visualize it into your browser.
 
 ## How to use:
 
