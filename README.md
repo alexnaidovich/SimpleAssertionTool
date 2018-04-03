@@ -1,5 +1,5 @@
 # SimpleAssertionTool
-A simple and lightweight tool to perform simple unit-testing.
+A simple and lightweight tool to perform simple unit-testing and show it into your browser.
 
 ## How to use:
 
@@ -29,7 +29,11 @@ A simple and lightweight tool to perform simple unit-testing.
      testAssert.assert((2 + 2 === 4), "Simple Expression Test That Passes");
      testAssert.assert((2 + 2 !== 4), "Simple Expression Test That Fails");
      ```
-       
+     
+     In your browser it is going to result in something like this:
+     
+     ![result](https://pp.userapi.com/c846020/v846020346/153c9/BXeUoBPvXfU.jpg)
+     
 ### An easy example
 
 There is the way I've tested the workability of this all:
