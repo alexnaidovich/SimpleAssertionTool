@@ -24,8 +24,8 @@ A simple and lightweight tool to perform simple unit-testing and visualize it in
   * Now you're completely ready to perform tests! Use `.assert()` method with two arguments to the variable you've stored above. At the first `{Boolean} statement` argument you are to compare the returned value of function (or expression) you are testing with the value expected. And as the second `message` argument you pass a `{String}` with ongoing message:
   
      ```javascript
-     testAssert.assert((yourFunc(yourArgs) === expected value), 'Returns true value!');
-     testAssert.assert((yourFunc(yourArgs) === not expected value), "Doesn't return false value!");
+     testAssert.assert((yourFunc(yourArgs) === expectedValue), 'Returns true value!');
+     testAssert.assert((yourFunc(yourArgs) === notExpectedValue), "Doesn't return false value!");
      testAssert.assert((2 + 2 === 4), "Simple Expression Test That Passes");
      testAssert.assert((2 + 2 !== 4), "Simple Expression Test That Fails");
      ```
@@ -50,7 +50,7 @@ There is the way I've tested the workability of this all:
    <body>
      <div class="assert" id="sum"></div>
      <script>    
-         const sum = (a, b) => a + b;
+         const sum = (a, b) => a + b; // the function to test; the same as " function sum(a,b){return a+b} "
          let sumAssert = new Assert('sum', 'Test Sum Function');
          sumAssert.assert((sum(2, 2) === 4), 'Returns 4 - true value!');
          sumAssert.assert((sum(2, 2) === 5), "Doesn't return false value!");
