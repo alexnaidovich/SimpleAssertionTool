@@ -59,13 +59,68 @@ There is the way I've tested the workability of this all:
    </body>
    </html>
    ```
+
+## Known Conveinence Issue
+
+```javascript
+// FIXME
+```
+
+When you use your tests a lot of times at one and the same HTML page, you are going to meet an unpleasant thing: you are overflowing the scope. It probably will make a mess with variable names (especially, when you store the new variable with the name you've already used). Plus, it is going to make you some troubles while debugging. It looks like this (pay attention to the "Scopes" bar at the right side of browser):
+
+![scope owerflow](https://pp.userapi.com/c834404/v834404295/109b0a/CNTSRpYJUMI.jpg)
+
+The problem is about to be solved when you close the scope. One of the ways to do that is to wrap all your JS code of current test into IIFE (Immideately Invoked Function Expression). The way to do this: 
+
+```javascript
+<!--  rezig-test01  -->
+
+    <div class="assert" id="rezig1"></div>
+    <script>
+    (function () { // ES5 way
+        let text = "Domo Arigato!"
+        const useless = ninjaCallback => ninjaCallback();
+        
+        let ninja001 = new Assert('rezig1', 'Useless Ninja Callback Test');
+        ninja001.assert(useless(() => text) === text, "The useless function works! " + text)
+    })(); 
+    </script>    
+    
+<!--    fillarr test  -->
    
-### Some Screenshots: 
+   <div class="assert" id="fill-arr"></div>
+   <script>
+   (() => { // ES6 way
+       let arr = new Array(5).fill('content');
+       
+       let arrTest = new Assert('fill-arr', 'Filling New Array');
+       arrTest.assert(arr[2] === 'content', 'That works fine - you filled array made by constructor in one line!');
+   })();  
+   </script>
+```
+
+Look at the scopes bar now:
+
+![clear scope](https://pp.userapi.com/c834404/v834404295/109b32/HEJCVCospIE.jpg)
+
+I tagged this issue as `// FIXME` because I still don't know how to make it more convenient for you. Wrapping your test into IIFE really works, but it means more of typing. I am thinking over how to redo that for the case of speed and convenience, and if you have ideas for that, please PR. 
+For now, the only thing I can offer in this case, is... *(see below)*
+
+### Amateur Tip
+*(definitely not a PRO tip)*
+
+You can bind a snippet to call everything you need by one trigger-combo-word! I use "Brackets" IDE and [Brackets Snippets](https://github.com/chuyik/brackets-snippets) extension for that. I've heard, it is easy to bind a snippet for Sublime Text. And I'm sure about the other popular IDEs can offer this option.
+
+![snippet screenshot](https://pp.userapi.com/c834404/v834404493/102cac/rFXxFNI1uC4.jpg)
+[![snippet video](https://pp.userapi.com/c845220/v845220461/1e049/XQEgXXciaK0.jpg)](https://youtu.be/a_URWi8qQZo)
+
+## Some Screenshots: 
 
 ![screenshot1](https://pp.userapi.com/c844724/v844724148/1971f/C2GRvDXKgag.jpg)
 ![screenshot2](https://pp.userapi.com/c844724/v844724148/19729/SIP1dzSxEqo.jpg)
 ![screenshot3](https://pp.userapi.com/c844724/v844724148/196f1/0MKk57nCYYM.jpg)
 
-## You are absolutely free to use it without any restrictions!
+## Terms of use
 
+You are absolutely free to use it without any restrictions!
 If there is anything you want to change, please PR.
