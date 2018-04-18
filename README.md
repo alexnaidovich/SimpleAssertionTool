@@ -13,6 +13,13 @@ A simple and lightweight tool to perform simple unit-testing and visualize it in
   
      ```<link rel="stylesheet" href="path/to/assert.css">```
      
+  * **OR** you can use CDN with those links:
+  
+  ```html
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alexnaidovich/SimpleAssertionTool@0.1/assert.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/alexnaidovich/SimpleAssertionTool@0.1/assert.js"></script>
+  ```
+     
   * Add a `<div class="assert">` into your HTML body, and specify this `div` with `id`:
   
      ```<div class="assert" id="my-test"></div>```
